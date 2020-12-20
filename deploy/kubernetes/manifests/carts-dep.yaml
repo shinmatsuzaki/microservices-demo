@@ -27,10 +27,10 @@ spec:
         resources:
           limits:
             cpu: 300m
-            memory: 500Mi
+            memory: 400Mi
           requests:
             cpu: 300m
-            memory: 500Mi
+            memory: 400Mi
         ports:
         - containerPort: 80
         securityContext:
@@ -49,13 +49,13 @@ spec:
           httpGet:
             path: /health
             port: 80
-          initialDelaySeconds: 300
+          initialDelaySeconds: 120
           periodSeconds: 3
         readinessProbe:
           httpGet:
             path: /health
             port: 80
-          initialDelaySeconds: 180
+          initialDelaySeconds: 120
           periodSeconds: 3
       volumes:
         - name: tmp-volume
